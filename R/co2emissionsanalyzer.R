@@ -16,6 +16,7 @@
 #' 
 #' @export
 start_energy_analysis <- function() {
+  # nocov start
   # Welcome messages and intro to the package
   message("Welcome to the CO2 Emissions by Energy Resource Data Tool.\n")
   cat("This program was developed for my CS50R final project.\n")
@@ -116,3 +117,4 @@ start_energy_analysis <- function() {
     )
   
 }
+# nocov end
