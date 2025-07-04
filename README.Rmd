@@ -1,0 +1,121 @@
+---
+title: "CO2 Emissions Analyzer"
+output: github_document
+---
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/CodeStarter25/CS50R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CodeStarter25/CS50R/co2emissionanalyzer/actions/workflows/R-CMD-check.yaml)
+
+[![Codecov test coverage](https://codecov.io/gh/CodeStarter25/CS50R/graph/badge.svg)](https://app.codecov.io/gh/CodeStarter25/CS50R/co2emissionanalyzer)
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+
+<!-- badges: end -->
+
+
+## Video: https://youtu.be/Fge4xfNYxCM
+
+## Introduction
+
+For CS50R final project submission, I have built this R package for downloading, processing and visualizing CO2 Emissions data by US State or nationally of 3 major Earthly resources: Coal, Natural Gas or Petroleum. The data is sourced from U.S. Energy Information Administration at this link: https://www.eia.gov/state/seds/sep_sum/html/xls/co2_source.xlsx
+
+The data involved is set on a yearly output from 1960 to 2023, all documented by State. 
+
+NOTE: As of uploading date, this package will work efficiently but for any changes within the formatting of the file performed by US EIA, it may fail. 
+
+## How It Works
+
+This is a full package that, with the help of user prompting do the following:
+- Guide the user through prompting about the available data in the Excel file
+- Upon answering all the prompts, download the file directly to the user disk in a dedicated data folder
+- Load, clean and filter the data based on what the user entered
+- Provide a visual graph or an Excel file (based on user request) that is saved to disk in the same data folder
+
+Each function can also be used independently if needed, though the full workflow is designed to be run from start to finish.
+
+### Installation
+
+You can install the development version directly from this GitHub repo by:
+- If devtools not installed: `install.packages("devtools")`
+- Install the package from my GitHub:
+`devtools::install_github("CodeStarter25/Projects/CS50R - co2emissionsanalyzer")`
+
+### Command Breakdown
+
+#### `start_energy_analysis()`
+
+This is the start call function for the package. You will be guided from here through prompts about the data in which you will be handling and the restrictions. Through each prompt, you can enter the filters to which will be applied to the data file and represented in the diagram or Excel file in the end. Prompts will include:
+- Energy Sources: Coal, Natural gas, Petroleum or Total (emissions of all 3)
+- US State or National US
+- Start Year: data goes back to 1960
+- End Year: data goes up to 2023
+- Output: Table (which is in the format of an Excel file) or Line (a .png file of representing the data)
+
+If the user does not enter any input (just presses Enter on each prompt), this will apply a default value to be entered automatically for continuity of the program. The exception to this rule is energy source, whereby at least 1 source must be entered. If none, the program will exit.
+
+#### `download_energy_file()`
+
+This function does not require any inputs and can be run alone.
+
+This function will:
+- Check for the data folder is available, and create if not
+- Download the data from the website into the data folder
+- The file is saved as: Emissions_data.xlsx
+- Returns invisible NULL
+
+#### `process_energy_data()`
+
+This function requires the following inputs to avoid errors:
+[1] energy_type: must be in the form of a character vector eg. c("Coal", "Petroleum")
+[2] us_state: US state in the form of 2 small letter abbreviation eg. "ca" for California
+[3] start_year: the year to start the data filtering with
+[4] end_year: the year to end the data filtering with
+
+This function will:
+- Perform the necessary checks on inputs to validate
+- Perform the necessary checks on data folder and file existence to pull correct data
+- Load the data from the file
+- Clean the data (as per current formatting)
+- Filter data based on input parameters
+- Return a list of data frame(s) called processed_data, each containing the data as per user request
+
+Note: This function can work standalone if called as long as:
+- User enters correct inputs
+- Data file exists in data folder in Top level folder of the package.
+
+Recommended: Run previous function of `download_energy_file()` first
+
+#### `visualize_energy_data()`
+
+This function requires the following inputs to avoid errors:
+[1] The return (processed_data) of the previous function, `process_energy_data()`
+[2] Output, which is the visualization method required (an Excel file(.xlsx) or a .png image of a line graph representing the data)
+
+This function will:
+- Perform checks on inputs for validation
+- Extract labeling data from input to be used in representation and naming convention
+- Apply labeling and formatting onto representation
+- Save the file to disk in the data folder
+- Returns invisible NULL
+
+Note: This function can work standalone if called as long as:
+- User enters correct inputs
+- Data file exists in data folder in Top level folder of the package.
+
+Recommended: Run the previous 2 functions for proper running:
+- `download_energy_data()`
+- `process_energy_data()`
+
+## Data Source
+
+The data is sourced from U.S. Energy Information Administration at the following link: https://www.eia.gov/state/seds/sep_sum/html/xls/co2_source.xlsx
+
+## License
+
+MIT License
+
+## Contact
+
+For any questions or suggestions, [open an issue](https://github.com/CodeStarter25/Projects/issues).

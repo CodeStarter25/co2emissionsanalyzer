@@ -1,0 +1,25 @@
+Package: co2emissionsanalyzer
+Type: Package
+Title: CO2 Emissions Data Analyzer
+Version: 1.0.0
+Author: person("Hasan", "Ghadban", email = "ghadban1988@gmail.com", role = c("aut", "cre", "cph"))
+Maintainer: Hasan Ghadban <ghadban1988@gmail.com>
+Description: An interactive tool for downloading, processing, and visualizing CO2 emissions data by energy source and U.S. state. Includes functionality to produce line graphs and Excel reports based on user-defined inputs. Data provided by the U.S. Energy Information Administration (EIA).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Video: https://youtu.be/Fge4xfNYxCM
+RoxygenNote: 7.3.2
+Imports:
+    dplyr,
+    ggplot2,
+    glue,
+    readxl,
+    stringr,
+    tidyr,
+    utils,
+    writexl
+Suggests:
+    testthat (>= 3.0.0),
+    curl
+Config/testthat/edition: 3
