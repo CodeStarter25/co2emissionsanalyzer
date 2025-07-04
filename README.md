@@ -2,7 +2,9 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/CodeStarter25/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CodeStarter25/co2emissionsanalyzer/actions/workflows/R-CMD-check.yaml) [![Codecov test coverage](https://codecov.io/gh/CodeStarter25/co2emissionsanalyzer/graph/badge.svg)](https://app.codecov.io/gh/CodeStarter25/co2emissionsanalyzer) <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
+[![R-CMD-check](https://github.com/CodeStarter25/co2emissionsanalyzer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CodeStarter25/co2emissionsanalyzer/actions/workflows/R-CMD-check.yaml) 
+[![Codecov test coverage](https://codecov.io/gh/CodeStarter25/co2emissionsanalyzer/graph/badge.svg)](https://app.codecov.io/gh/CodeStarter25/co2emissionsanalyzer) 
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
 
 <!-- badges: end -->
 
