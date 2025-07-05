@@ -8,15 +8,9 @@
 
 <!-- badges: end -->
 
-<p>&nbsp;</p>
-
 ---
 
-## 🎥 Video
-
 [Watch the demo](https://youtu.be/Fge4xfNYxCM)
-
-<p>&nbsp;</p>
 
 ---
 
